@@ -1,3 +1,7 @@
+package Examples;
+
+import Examples.Library;
+
 public class Menu_Template {
 
     public static void run() {

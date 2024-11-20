@@ -48,6 +48,33 @@ public class Ex3_Client {
 
     }//mowLawn
 
+    public void setHasDog(boolean hasDog) {
+        this.hasDog = hasDog;
+
+    }//setHasDog
+
+    public void processPayment(double dollars){
+        outstandingFees -= dollars;
+        System.out.println(name + " you currently owe $" + outstandingFees);
+    }//processPayment
+
+    public String getName() {
+        return name;
+    }//getName
+
+    public void delinquent(){
+        double intrest = 5 + (outstandingFees * 0.1);
+        System.out.println(name + " yourpayment is overdue, you have been charged intrest of " + intrest);
+        outstandingFees += intrest;
+
+        if(    outstandingFees > 500 && hasDog   ){
+            hasDog = false;
+        }
+
+    }
+
+
+
 
 
 }//client
