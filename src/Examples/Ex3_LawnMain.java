@@ -1,6 +1,7 @@
 package Examples;
 
 import java.util.ArrayList;
+import java.io.*;
 
 public class Ex3_LawnMain {
 
@@ -8,6 +9,7 @@ public class Ex3_LawnMain {
 
         ArrayList <Ex3_Client> allClient = new ArrayList <>();
 
+        loadFile("data/ClientData.csv", allClient);
         allClient.add(  new Ex3_Client(  "McDavid", "100 Maple Dr", 1000, true  )  );
         allClient.add(  new Ex3_Client(  "Draisaitl", "102 Maple Dr", 600, true  )  );
         allClient.add(  new Ex3_Client(  "Nugent-Hopkins", "50 Main Dr", 600, false  )  );
@@ -95,6 +97,28 @@ public class Ex3_LawnMain {
         }
         return -1;
     }
+
+    public static void loadFile(String filename, ArrayList<Ex3_Client> list ) {
+
+        try {
+            BufferedReader file = new BufferedReader(new FileReader(filename));
+
+            String dataToRead;
+            while( file.ready()){
+                dataToRead = file.readLine();
+
+                String tempArray[] = dataToRead.split(",");
+
+                list.add( new Ex3_Client(  tempArray[0],tempArray[1], Integer.parseInt(tempArray[4]),Boolean.parseBoolean(tempArray[5]), Double.parseDouble(tempArray[2])   ));
+
+            }
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        }
+    }//end loadFile
+
+
 
 
 

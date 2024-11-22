@@ -9,6 +9,9 @@ public class As1_Main {
 
     public static void run() {
 
+
+
+
         ArrayList<As1_Crop> allCrops = new ArrayList();
 
         allCrops.add(new As1_Crop(   "Canola", 38.4 , "Bushels per acre", 16.44   )  );
@@ -30,6 +33,7 @@ public class As1_Main {
         }
 
         System.out.println("Welcome Atticus' farm");
+        double totalRevenue = 0;
         while (true) {
             System.out.println();
             System.out.println("What would you like to do?");
@@ -48,21 +52,39 @@ public class As1_Main {
                 }
 
             } else if (choice == 2) {
+
 //                System.out.println("Not Yet Implemented");
                 System.out.println("What crop would you like?");
                 String name = Library.input.nextLine();
                 int foundCrop = searchByName(allCrops, name);
-                allCrops.get(foundCrop).printMe();
-
-
-
-
-
+                if(foundCrop > -1) {
+                    allCrops.get(foundCrop).printMe();
+                    System.out.println("would you like to harvest this crop?");
+                    String wantHarvest = Library.input.nextLine();
+                    if (wantHarvest.equalsIgnoreCase("yes")) {
+                        totalRevenue = totalRevenue + allCrops.get(foundCrop).Harvest();
+                    } else {
+                        //leave blank
+                    }//else if
+                }else{
+                    System.out.println("Crop was not found");
+                }
             } else if (choice == 3) {
-                System.out.println("Not Yet Implemented");
+//                System.out.println("Not Yet Implemented");
+
+                System.out.println(   "Total revenue from all harvested crops:  $" + totalRevenue );
+
 
             } else if (choice == 4) {
-                System.out.println("Not Yet Implemented");
+               // System.out.println("Not Yet Implemented");
+                System.out.println("What crop would you like?");
+                String name = Library.input.nextLine();
+                System.out.println("How many acres would you like to plant?");
+                int size = Library.input.nextInt();
+                int foundCrop = searchByName(allCrops, name);
+//                if(allCrops.get(foundCrop)     )
+
+
 
             }  else {
 

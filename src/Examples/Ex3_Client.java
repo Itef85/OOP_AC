@@ -19,6 +19,16 @@ public class Ex3_Client {
 
 
     }//constructor
+    public Ex3_Client(String n, String a, int l, boolean d,double f){
+
+        name = n;
+        address = a;
+        lawnSize = l;
+        hasDog = d;
+        outstandingFees = f;
+
+
+    }//constructor
 
     public String toString(){
         return name + "   " + address + "   " + lawnSize + "   " + hasDog + "   " + outstandingFees;
@@ -58,10 +68,6 @@ public class Ex3_Client {
         System.out.println(name + " you currently owe $" + outstandingFees);
     }//processPayment
 
-    public String getName() {
-        return name;
-    }//getName
-
     public void delinquent(){
         double intrest = 5 + (outstandingFees * 0.1);
         System.out.println(name + " yourpayment is overdue, you have been charged intrest of " + intrest);
@@ -72,9 +78,25 @@ public class Ex3_Client {
         }
 
     }
+    public String getName() {
+        return name;
+    }
 
+    public String getAddress() {
+        return address;
+    }
 
+    public int getLawnSize() {
+        return lawnSize;
+    }
 
+    public boolean isHasDog() {
+        return hasDog;
+    }
+
+    public double getOutstandingFees() {
+        return outstandingFees;
+    }
 
 
 }//client

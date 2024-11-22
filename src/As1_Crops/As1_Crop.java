@@ -36,6 +36,15 @@ public class As1_Crop {
         System.out.println(name + " is planted in " + acres + " acres yielding " + yield + " " + units + " at the cost of $" + price + " per bu/cwt/ton/lb" );
     }
 
+    public double Harvest(){
+        double total =  this.price * this.yield * this.acres;
+        System.out.println("Harvest Value: $" + total);
+        this.acres = 0;
+        return total;
+    }
+
+
+
     public String getName() {
         return name;
     }
