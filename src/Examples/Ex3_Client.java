@@ -86,6 +86,7 @@ public class Ex3_Client {
         return address;
     }
 
+
     public int getLawnSize() {
         return lawnSize;
     }

@@ -23,6 +23,7 @@ public class As1_Crop {
 
     }//crop
 
+
     public As1_Crop(String n, double y, String u, double p, int a) {
         name = n;
         yield = y;

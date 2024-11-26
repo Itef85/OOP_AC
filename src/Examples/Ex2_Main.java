@@ -28,6 +28,7 @@ public class Ex2_Main {
 //            System.out.println(allActors.get(i).getRole() + " is played by " + allActors.get(i).getName());
         }
 
+
         //calculate revenue at 15$ per ticket
         int total = 0;
         for(int i=0; i<allActors.size(); i++){
