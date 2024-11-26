@@ -82,9 +82,18 @@ public class As1_Main {
                 System.out.println("How many acres would you like to plant?");
                 int size = Library.input.nextInt();
                 int foundCrop = searchByName(allCrops, name);
-//                if(allCrops.get(foundCrop)     )
+                if(foundCrop > -1  ){
+                    allCrops.get(foundCrop).addAcres(size);
 
+                }else {
+                    System.out.println("How much dose this yeild? in bu/acre ");
+                    double yeild = Library.input.nextDouble();
 
+                    System.out.println("what is the Price?");
+                    double price = Library.input.nextDouble();
+
+                    allCrops.add(new As1_Crop(   name, yeild ,  " bu/acre" , price, size  )  );
+                }
 
             }  else {
 

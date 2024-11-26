@@ -23,6 +23,15 @@ public class As1_Crop {
 
     }//crop
 
+    public As1_Crop(String n, double y, String u, double p, int a) {
+        name = n;
+        yield = y;
+        units = u;
+        price = p;
+        acres = a;
+
+    }//crop
+
     public String toString(){
         return name + ", " + yield + ", " + units + ", " + price + ", " + acres;
     }//toString
@@ -46,6 +55,16 @@ public class As1_Crop {
 
 
     public String getName() {
+
         return name;
     }
+
+    public int getAcres() {
+        return acres;
+    }
+
+    public void addAcres(int a){
+        this.acres += this.acres + a;
+    };
+
 }//class

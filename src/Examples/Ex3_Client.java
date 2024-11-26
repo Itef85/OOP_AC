@@ -90,7 +90,7 @@ public class Ex3_Client {
         return lawnSize;
     }
 
-    public boolean isHasDog() {
+    public boolean getHasDog() {
         return hasDog;
     }
 
