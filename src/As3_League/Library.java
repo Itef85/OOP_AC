@@ -1,4 +1,4 @@
-package As2_League;
+package As3_League;
 
 import java.util.Scanner;
 
