@@ -30,26 +30,42 @@ public class As3_Team {
         loses = l;
         overTimeLoses = o;
 
-        public String toString(){
-            return name + ", " + nickName + ", " + city + ", " + division + ", " + wins + ", " + loses + ", " + overTimeLoses;
-        }//toString
-
-
     }//crop
 
+    public String toString(){
+        return name + ", " + nickName + ", " + city + ", " + division + ", " + wins + ", " + loses + ", " + overTimeLoses;
+    }//toString
 
 
+    public void printMe(){
+        System.out.println(name + " Nick Named " + nickName + " Play In " + city + " In The " + division + " Division With " + wins + " Wins And " + loses + " Loses And " + overTimeLoses + " Over Time Loses ");
+    }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getNickName() {
+        return nickName;
+    }
 
+    public String getCity() {
+        return city;
+    }
 
+    public String getDivision() {
+        return division;
+    }
 
+    public int getWins() {
+        return wins;
+    }
 
+    public int getLoses() {
+        return loses;
+    }
 
-
-
-
-
-
-
+    public int getOverTimeLoses() {
+        return overTimeLoses;
+    }
 }//class
