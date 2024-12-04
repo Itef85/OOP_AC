@@ -68,12 +68,13 @@ public class As3_LeagueMain {
 
             }
             if (choice == 4) {
-                System.out.println("not yet implemented");
-                for( int i=0;i<allTeam.size(); i++){
+              //  System.out.println("not yet implemented");
+
 
                     selectionSortIntArr(allTeam);
 
-                }
+
+
 
             }
             if (choice == 5) {
@@ -110,9 +111,9 @@ public class As3_LeagueMain {
 
 
     public static void selectionSortIntArr(ArrayList<As3_Team> list){
-        for(int i=0; i<arr.length-1; i++){
+        for(int i=0; i<list.size()-1; i++){
             int lowestIndex = i;
-            for(int j=i+1; j<arr.length; j++){
+            for(int j=i+1; j<list.size(); j++){
                 if(list.get(j).getWins() < list.get(lowestIndex).getWins()     ){
                     lowestIndex = j;
                 }
