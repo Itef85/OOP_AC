@@ -86,11 +86,14 @@ public class As1_Main {
                     allCrops.get(foundCrop).addAcres(size);
 
                 }else {
-                    System.out.println("How much dose this yeild? in bu/acre ");
+                    System.out.println("How much dose this yeild?  ");
                     double yeild = Library.input.nextDouble();
+
 
                     System.out.println("what is the Price?");
                     double price = Library.input.nextDouble();
+
+
 
                     allCrops.add(new As1_Crop(   name, yeild ,  " bu/acre" , price, size  )  );
                 }

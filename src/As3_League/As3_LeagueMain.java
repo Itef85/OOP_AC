@@ -22,7 +22,7 @@ public class As3_LeagueMain {
         while(true) {
             System.out.println();
 
-            System.out.println("Press 1 to Print List of Teams\nPress 2 to Find the Average's\nPress 3 to View by Division\nPress 4 to Sort by team NickName\nPress 5 to Update Stats\nPress 6 to Exit and Save");
+            System.out.println("Press 1 to Print List of Teams\nPress 2 to Find the Average's\nPress 3 to View by Division\nPress 4 to Sort by Lowest to Highest Wins\nPress 5 to Update Stats\nPress 6 to Exit and Save");
 
             int choice = Library.input.nextInt();
             Library.input.nextLine();
@@ -34,24 +34,46 @@ public class As3_LeagueMain {
                 }
             }
             if (choice == 2) {
-               System.out.println("not yet implemented");
+             //  System.out.println("not yet implemented");
             int avrW = 0;
             int avrL = 0;
             int avrOTL = 0;
 
+            for (int i=0; i<allTeam.size(); i++){
+                avrW = avrW + allTeam.get(i).getWins();
+                avrL = avrL + allTeam.get(i).getLoses();
+                avrOTL = avrOTL + allTeam.get(i).getOverTimeLoses();
+
+            }
+                System.out.println("The Average Wins Are: " + (avrW / allTeam.size()) + "\nThe Average Loses Are: " + (avrL / allTeam.size()) + "\nThe Average Over Time Loses Are: " + (avrOTL / allTeam.size())       );
 // set thing to 0 then for loop all things added to make 1 thing divide that by teamsize
 
 
 
             }
             if (choice == 3) {
-                System.out.println("not yet implemented");
+               // System.out.println("not yet implemented");
+                System.out.println("What Divison would you like to search in? \nMetropolitan\nAtlantic\nCentral\nPacific");
+                System.out.println();
+                String div = Library.input.nextLine();
 
+                for( int i =0; i<allTeam.size(); i++){
+                if(div.equalsIgnoreCase(allTeam.get(i).getDivision()  )   ){
+                    System.out.println("The " + allTeam.get(i).getNickName() + " Who Play In " + allTeam.get(i).getCity() + " With " + allTeam.get(i).getWins() + " Wins And " + allTeam.get(i).getLoses() + " Loses"   );
+                }
+
+                }
+                //in for loop if div .equals division print div at i
 
 
             }
             if (choice == 4) {
                 System.out.println("not yet implemented");
+                for( int i=0;i<allTeam.size(); i++){
+
+                    selectionSortIntArr(allTeam);
+
+                }
 
             }
             if (choice == 5) {
@@ -85,6 +107,26 @@ public class As3_LeagueMain {
         }
         return -1;
     }
+
+
+    public static void selectionSortIntArr(ArrayList<As3_Team> list){
+        for(int i=0; i<arr.length-1; i++){
+            int lowestIndex = i;
+            for(int j=i+1; j<arr.length; j++){
+                if(list.get(j).getWins() < list.get(lowestIndex).getWins()     ){
+                    lowestIndex = j;
+                }
+            }
+//swaps the lowest to the beginning
+            As3_Team tempCrop = list.get(i);
+            list.set(i, list.get(lowestIndex) );
+            list.set(lowestIndex, tempCrop);
+
+
+        }
+    }
+
+
 
 
     public static void loadFile(String filename, ArrayList<As3_Team> list ) {
@@ -136,8 +178,6 @@ public class As3_LeagueMain {
         }
 
     }//end saveFile
-
-
 
 
 }//main
