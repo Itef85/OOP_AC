@@ -135,9 +135,15 @@ public class As3_LeagueMain {
 
                 }
             if (choice == 6) {
-                saveFile("data/nhlTeams.csv", allTeam);
-                break;
-            }
+                System.out.println("would you like to save?\nyes\nno");
+                String save = Library.input.nextLine();
+                if(save.equalsIgnoreCase("yes")) {
+                    saveFile("data/nhlTeams.csv", allTeam);
+                    break;
+                }else{
+                    break ;
+                }
+            }//6
             System.out.println();
 
         }//while
