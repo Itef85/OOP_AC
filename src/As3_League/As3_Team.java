@@ -30,6 +30,8 @@ public class As3_Team {
         loses = l;
         overTimeLoses = o;
 
+        As4_Player = "";
+
     }//crop
 
     public String toString(){
