@@ -19,6 +19,9 @@ public class As4_Stats {
         return name + ", " + playerID + ", " + goals;
     }//toString
 
+    public void printMe(){
+        System.out.println(name + " Player ID: " + playerID + " Has " + goals + " Goals ");
+    }
 
     public String getName() {
         return name;
@@ -43,4 +46,10 @@ public class As4_Stats {
     public void setGoals(int goals) {
         this.goals = goals;
     }
+
+    public void addGoals(int goals) {
+        this.goals += goals;
+    }
+
+
 }//As4_Stats
