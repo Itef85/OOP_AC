@@ -68,4 +68,33 @@ public class As3_Team {
     public int getOverTimeLoses() {
         return overTimeLoses;
     }
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setDivision(String division) {
+        this.division = division;
+    }
+
+    public void setWins(int wins) {
+        this.wins += wins;
+    }
+
+    public void setLoses(int loses) {
+        this.loses += loses;
+    }
+
+    public void setOverTimeLoses(int overTimeLoses) {
+        this.overTimeLoses += overTimeLoses;
+    }
 }//class

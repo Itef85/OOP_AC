@@ -78,9 +78,62 @@ public class As3_LeagueMain {
 
             }
             if (choice == 5) {
-                System.out.println("not yet implemented");
+              //  System.out.println("not yet implemented");
 
-            }
+                System.out.println("What is the Nick Name of the first team that played?");
+                String name = Library.input.nextLine();
+                int foundIndex = searchByName(allTeam, name);
+                if(foundIndex > -1  ){
+
+                System.out.println("did they win?");
+                String win = Library.input.nextLine();
+                if( win.equalsIgnoreCase("yes")){
+                    allTeam.get(foundIndex).setWins(1);
+                }else {
+                    System.out.println("did they Lose in overtime?");
+                    String ot = Library.input.nextLine();
+                    if ( ot.equalsIgnoreCase("yes")){
+                        allTeam.get(foundIndex).setOverTimeLoses(1);
+                        allTeam.get(foundIndex).setLoses(1);
+                    }else {
+                        allTeam.get(foundIndex).setLoses(1);
+                    }
+                }//else - win
+
+                }else{
+                    System.out.println("This is not a Team please try again?");
+                    break;
+                }//foundIndex
+
+                System.out.println("What is the Nick Name of the first team that played?");
+                String name2 = Library.input.nextLine();
+                int foundIndex2 = searchByName(allTeam, name2);
+                if(foundIndex2 > -1  ){
+
+                    System.out.println("did they win?");
+                    String win = Library.input.nextLine();
+                    if( win.equalsIgnoreCase("yes")){
+                        allTeam.get(foundIndex2).setWins(1);
+                    }else {
+                        System.out.println("did they Lose in overtime?");
+                        String ot = Library.input.nextLine();
+                        if ( ot.equalsIgnoreCase("yes")){
+                            allTeam.get(foundIndex2).setOverTimeLoses(1);
+                            allTeam.get(foundIndex2).setLoses(1);
+                        }else {
+                            allTeam.get(foundIndex2).setLoses(1);
+                        }
+                    }//else - win
+
+                }else{
+                    System.out.println("This is not a Team please try again?");
+                    break;
+                } //foundIndex2
+
+
+
+
+                }
             if (choice == 6) {
                 saveFile("data/nhlTeams.csv", allTeam);
                 break;
@@ -100,9 +153,9 @@ public class As3_LeagueMain {
 
 
 
-    public static int searchByDivision( ArrayList<As3_Team> list, String searchTerm ){
+    public static int searchByName( ArrayList<As3_Team> list, String searchTerm ){
         for (int i = 0; i < list.size(); i++) {
-            if(searchTerm.equalsIgnoreCase( list.get(i).getDivision() )){
+            if(searchTerm.equalsIgnoreCase( list.get(i).getNickName() )){
                 return i;
             }
         }
