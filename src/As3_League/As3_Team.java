@@ -31,6 +31,8 @@ public class As3_Team {
         overTimeLoses = o;
 
 
+
+        ArrayList<As3_Player> allPlayers = new ArrayList<As3_Player>();
     }//crop
 
     public String toString(){
