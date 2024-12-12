@@ -3,6 +3,7 @@ package As3_League;
 import As1_Crops.As1_Crop;
 import As3_League.As3_Players;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class As3_Team {
@@ -23,6 +24,7 @@ public class As3_Team {
 
     private int overTimeLoses;
 
+    private ArrayList<As3_Players>allPlayers;
 
     public As3_Team(String n, String nn, String c, String d, int w, int l, int o) {
         name = n;
@@ -33,9 +35,9 @@ public class As3_Team {
         loses = l;
         overTimeLoses = o;
 
+        allPlayers = new ArrayList<>();
 
-
-        ArrayList<As3_Players> allPlayers = new ArrayList<As3_Players>();
+//        ArrayList<As3_Players> allPlayers = new ArrayList<As3_Players>();
 
     }//crop
 
