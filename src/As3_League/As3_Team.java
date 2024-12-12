@@ -1,5 +1,8 @@
 package As3_League;
 
+import As1_Crops.As1_Crop;
+import As3_League.As3_Players;
+
 import java.util.ArrayList;
 
 public class As3_Team {
@@ -32,7 +35,8 @@ public class As3_Team {
 
 
 
-        ArrayList<As3_Player> allPlayers = new ArrayList<As3_Player>();
+        ArrayList<As3_Players> allPlayers = new ArrayList<As3_Players>();
+
     }//crop
 
     public String toString(){
@@ -100,4 +104,14 @@ public class As3_Team {
     public void setOverTimeLoses(int overTimeLoses) {
         this.overTimeLoses += overTimeLoses;
     }
+
+    public void addPlayer(String nameP, String id, int g){
+
+        allPlayers.add(new As3_Players(   nameP, id, g  )  );
+
+    }//addPlayer
+
+
+
+
 }//class
