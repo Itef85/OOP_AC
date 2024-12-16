@@ -34,6 +34,7 @@ public class As3_LeagueMain {
 
 
 
+
         System.out.println("NHL 2023-24 season team stats");
         for(int i=0; i<allTeam.size(); i++){
             System.out.println(allTeam.get(i).toString());
