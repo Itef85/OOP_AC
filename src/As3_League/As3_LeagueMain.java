@@ -15,6 +15,18 @@ public class As3_LeagueMain {
         loadFile("data/nhlTeams.csv", allTeam);
 
 
+            if( allTeam.get(0).getName().equals("New York Rangers")){
+                allPlayers.add(new As3_Players(    )  );
+
+            }
+
+
+
+
+
+
+
+
 
 
 
