@@ -24,7 +24,13 @@ public class As3_Team {
 
     private int overTimeLoses;
 
-    private ArrayList<As3_Players>allPlayers;
+    private ArrayList<As3_Players> allPlayers = new ArrayList<As3_Players>();
+
+    public void addPlayer(String nameP, int id, int g, String p){
+
+        allPlayers.add(new As3_Players(   nameP, id, g , p )  );
+
+    }//addPlayer
 
     public As3_Team(String n, String nn, String c, String d, int w, int l, int o) {
         name = n;
@@ -35,7 +41,7 @@ public class As3_Team {
         loses = l;
         overTimeLoses = o;
 
-        allPlayers = new ArrayList<>();
+//        allPlayers = new ArrayList<>();
 
 //        ArrayList<As3_Players> allPlayers = new ArrayList<As3_Players>();
 
@@ -107,12 +113,38 @@ public class As3_Team {
         this.overTimeLoses += overTimeLoses;
     }
 
-    public void addPlayer(String nameP, String id, int g){
+public void printMyPlayers(){
 
-        allPlayers.add(new As3_Players(   nameP, id, g  )  );
+    for (int i = 0; i < allPlayers.size(); i++) {
+        System.out.println("Number " + this.allPlayers.get(i).getPlayerID() + ", " + this.allPlayers.get(i).getNameP() + " Plays Position" + this.allPlayers.get(i).getPosition() + " With " + this.allPlayers.get(i).getGoalsScored() + " Goals Scored" );
 
-    }//addPlayer
+    }
 
+}
+public int avragegoals(){
+    int avrg = 0;
+
+
+    for (int i=0; i<allPlayers.size(); i++){
+        avrg = avrg + allPlayers.get(i).getGoalsScored();
+
+    }
+return avrg;
+}//avrage goals
+
+
+    public ArrayList<As3_Players> getAllPlayers() {
+        return allPlayers;
+    }
+
+//    public void updateStats(){
+//        System.out.println("how many goals do they have now? ");
+//        String goal = Library.input.nextLine();
+//
+//       allTeam.getAllPlayers.get
+//
+//
+//    };
 
 
 

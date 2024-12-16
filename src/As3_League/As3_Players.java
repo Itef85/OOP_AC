@@ -5,15 +5,18 @@ public class As3_Players {
 
     private String nameP;
 
-    private String playerID;
+    private int playerID;
 
     private int goalsScored;
 
-    public As3_Players(String n, String id, int g) {
+    private String position;
+
+    public As3_Players(String n, int id, int g, String p) {
 
         nameP = n;
         playerID = id;
         goalsScored = g;
+        position = p;
 
 
     };
@@ -24,8 +27,9 @@ public class As3_Players {
                 "nameP='" + nameP + '\'' +
                 ", playerID='" + playerID + '\'' +
                 ", goalsScored=" + goalsScored +
+                ", position='" + position + '\'' +
                 '}';
-    }//to string
+    }
 
     public void setGoalsScored(int goalsScored) {
         this.goalsScored += goalsScored;
@@ -33,5 +37,17 @@ public class As3_Players {
 
     public String getNameP() {
         return nameP;
+    }
+
+    public int getPlayerID() {
+        return playerID;
+    }
+
+    public int getGoalsScored() {
+        return goalsScored;
+    }
+
+    public String getPosition() {
+        return position;
     }
 }//calss
